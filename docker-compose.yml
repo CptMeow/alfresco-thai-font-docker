@@ -65,8 +65,7 @@ services:
         
 
     transform-core-aio:
-        build:
-          context: ./transform
+        image: mrworapon/alfresco-transform-core-aio-thai:2.5.7
         mem_limit: 2048m
         environment:
             JAVA_OPTS: "
@@ -177,15 +176,6 @@ services:
             - ./config/nginx.htpasswd:/etc/nginx/conf.d/nginx.htpasswd 
         ports:
             - 80:80
-
-    
-
-    
-
-    
-
-    
-
 
 volumes:
     alf-repo-data:

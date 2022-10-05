@@ -157,9 +157,12 @@ services:
     content-app:
         image: alfresco/alfresco-content-app:${ACA_TAG}
         mem_limit: 256m
+        volumes:
+            - ./config/app/index.html:/usr/share/nginx/html/index.html
         depends_on:
             - alfresco
             - share
+
 
     # HTTP proxy to provide HTTP Default port access to services
     # SOLR API and SOLR Web Console are protected to avoid unauthenticated access
